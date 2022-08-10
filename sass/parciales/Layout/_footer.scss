@@ -1,0 +1,18 @@
+footer {
+    width: auto;
+    color: #ffffff;
+    position: sticky;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    /* border: 2px solid blue; */
+    a {
+      align-items: center;
+    }
+    p{
+      text-align: center;
+      @extend p;
+      font-size: 25px;
+      @extend footer;
+    }
+  
+  }

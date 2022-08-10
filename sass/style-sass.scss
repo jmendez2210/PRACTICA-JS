@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+@import"./parciales/reset";
+// @import "./parciales/Utilities/funciones";
+@import"./parciales/mixins";
+@import"./parciales/Base/Titulos";
+@import "./parciales/Base/animaciones";
+@import"./parciales/Base/contenido";
+@import"./parciales/Layout/footer";
+
+
+@media screen and (max-width: 425px) {
+    nav div img{
+        animation: none !important;
+    }
+
+    .img-fluid {
+        max-width: auto;
+        height: auto;
+    }
+
+    section p iframe{
+      width: 100%;
+      height: auto;
+    }
+
+    div h2 {
+        font-size: 4vw !important;
+    }
+    div h3 {
+        font-size: 3.5vw !important;
+    }
+    header {
+        padding-top: 30px;
+      }
+    .img-tamaño {
+        height: auto !important;
+        width: auto;
+        object-fit:contain !important;
+        
+        }
+    }
+
+@media only screen and (max-width: 992px) {
+        section p iframe{
+            width: 100%;
+            height: auto;
+          }
+
+          .img-fluid {
+            object-fit: cover;
+        }
+          .img-tamaño {
+            height: 300px !important;
+            width: auto;
+            object-fit:contain !important;
+            
+            }
+      } 

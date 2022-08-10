@@ -1,0 +1,17 @@
+{
+  "name": "sass",
+  "version": "1.0.0",
+  "description": "configuracion sass proyecto f3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css":"node-sass --include-path scss ./style-sass.scss ./style-sass.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "author": "Jorge mendez",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.18"
+  }
+}

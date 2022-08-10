@@ -1,0 +1,28 @@
+@import "../Utilities/variables";
+.row {
+    justify-content: center;
+    padding: 30px;
+  }
+
+div {
+    h1{
+       font-weight: bold;
+       font-size: $tituloH1;
+       @include titulos-h1y2;
+    }
+    h2 {
+        font-weight: 700;
+        font-size: $tituloH2 !important;
+        @include titulos-h1y2;
+      }
+
+    h3{
+        letter-spacing: 5px !important;
+        @include tituloh3;
+    }
+      .titulo {
+        color: #464646;
+        @include titulos-h1y2;
+      }
+      
+  }
