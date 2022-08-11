@@ -233,7 +233,7 @@ function agregarversion() {
 // solicitar al usuario ingresar nueva version
 //--------------------------------------------------------------------------------
 function bienvenido() {
-    const consulta = prompt ("¿Desea ingresar una nueva version de vehiculo?", "SI") 
+    const consulta = prompt ("¿Desea ingresar una nueva version de vehiculo?", "NO") 
     
     if (consulta.toUpperCase () === "SI") {
         agregarversion ()

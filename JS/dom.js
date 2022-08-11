@@ -109,3 +109,42 @@ const vehiculosdom = [
                     containervehiculosdom.append(div)
 })
 
+/* eventos para el cotizador */
+const btnpgt = document.querySelector('#btnpgt')
+const btnmza = document.querySelector('#btnmza')
+const btnhvl = document.querySelector('#btnhvl')
+const btnszk = document.querySelector('#btnszk')
+
+
+btnpgt.onclick = () => {
+    console.log("Enviar a Pagina Peugeot")
+}
+
+btnpgt.onmouseover = () => {
+    console.log("Al usuario le interesa esta marca!")
+}
+
+btnmza.onclick = () => {
+    console.log("Enviar a Pagina Mazda")
+}
+
+btnmza.onmouseover = () => {
+    console.log("Al usuario le interesa esta marca!")
+}
+
+
+btnhvl.onclick = () => {
+    console.log("Enviar a Pagina Haval")
+}
+
+btnhvl.onmouseover = () => {
+    console.log("Al usuario le interesa esta marca!")
+}
+
+btnszk.onclick = () => {
+    console.log("Enviar a Pagina Suzuki")
+}
+
+btnszk.onmouseover = () => {
+    console.log("Al usuario le interesa esta marca!")
+}
