@@ -1,28 +1,28 @@
 // ========== DOM =======
 
-console.dir (document)
+/*console.dir (document)*/
 
 
 
 
 // llamar elemento de html
-const titulos = document.getElementById('titulos')
+/*const titulos = document.getElementById('titulos')
 console.log (titulos)
 const marca = document.getElementById('marca')
 console.log (marca)
 const listItems = document.getElementsByClassName('item')
 
 const parrafo = document.getElementById ('parrafo')
-console.log (parrafo.innerHTML)
+console.log (parrafo.innerHTML)*/
 
 // modificar elemento de html
-parrafo.innerHTML = "************** texto pruebalaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaan**************"
+// parrafo.innerHTML = "************** texto pruebalaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaan**************"
 
 // crear elementos al parrafo
-const parrafomarca = document.createElement ('parrafomarca')
+/*const parrafomarca = document.createElement ('parrafomarca')
 parrafomarca.innerHTML = " lorem ipsum blblblblbbllbblblblblblbl"
 
-parrafo.append(parrafomarca)
+parrafo.append(parrafomarca)*/
 
 // const lista = document.getElementById ('lista')
 
@@ -33,7 +33,7 @@ parrafo.append(parrafomarca)
 // lista.append(li)
 
 //arreglo agregar versiones 
-const modelospeugoet = ["208", "308", "3008", "5008", "Traveller", "Landtrek", "Partner"] 
+/*const modelospeugoet = ["208", "308", "3008", "5008", "Traveller", "Landtrek", "Partner"] 
 const listamodelospg = document.getElementById('modelospeugoet')
 
 
@@ -43,7 +43,7 @@ for (const modelos of modelospeugoet) {
     
     listamodelospg.append(li)
     
-}
+}*/
 
 // const modelosmazda = ["Mazda 3", "Mazda 2", "CX-5", "CX-9", "CX-30", "MX-5","BT-50"] 
 // const listamodelosmz = document.getElementById('modelosmazda')
@@ -62,7 +62,7 @@ for (const modelos of modelospeugoet) {
 
 //eliminar elementos
 
-parrafo.remove ()
+// parrafo.remove ()
 
 
 
@@ -70,7 +70,7 @@ parrafo.remove ()
 //dom con objetos
 /* ----------------------------------------------------------------------*/
 
-const vehiculosdom = [
+/*const vehiculosdom = [
          {
             id: 1,
             marca: "mazda",
@@ -107,44 +107,32 @@ const vehiculosdom = [
                     <small>Color: ${vehiculosdom.color}</small>`
 
                     containervehiculosdom.append(div)
-})
+})*/
 
-/* eventos para el cotizador */
-const btnpgt = document.querySelector('#btnpgt')
-const btnmza = document.querySelector('#btnmza')
-const btnhvl = document.querySelector('#btnhvl')
-const btnszk = document.querySelector('#btnszk')
+/* ----------------------------------------------------------------------*/
+//DOM PARA PAGINA PEUGEOT.
+/* ----------------------------------------------------------------------*/
+
+const section = document.querySelector("#seccion-modelos-peugoet")
+const temp = document.querySelector ("template") 
+const card = temp.content.querySelector("div")
+
+clonado(vehiculos)
 
 
-btnpgt.onclick = () => {
-    console.log("Enviar a Pagina Peugeot")
+function clonado (array){
+    array.forEach((elm) => {
+        let cardClonada = card.cloneNode (card,true)
+        cardClonada.children[1].innerText = elm.modelo
+        cardClonada.children[2].innerText = elm.version
+        cardClonada.children[3].innerText = elm.precio
+        
+    
+        section.appendChild(cardClonada)
+        
+        
+     });
+
 }
 
-btnpgt.onmouseover = () => {
-    console.log("Al usuario le interesa esta marca!")
-}
 
-btnmza.onclick = () => {
-    console.log("Enviar a Pagina Mazda")
-}
-
-btnmza.onmouseover = () => {
-    console.log("Al usuario le interesa esta marca!")
-}
-
-
-btnhvl.onclick = () => {
-    console.log("Enviar a Pagina Haval")
-}
-
-btnhvl.onmouseover = () => {
-    console.log("Al usuario le interesa esta marca!")
-}
-
-btnszk.onclick = () => {
-    console.log("Enviar a Pagina Suzuki")
-}
-
-btnszk.onmouseover = () => {
-    console.log("Al usuario le interesa esta marca!")
-}
