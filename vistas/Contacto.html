@@ -144,19 +144,19 @@
         <div class="col-sm-6 col-md-6 col-lg-6 d-flex flex-column justify-content-between">
 
             <h2 class="titulo"> COMPLETA EL FORMULARIO </h2>
-          <form id="formulario">
+          <form class="" id="formulario">
             <div class="form-row">
               <!-- INGRESAR NOMBRE -->
               <div class="form-group col-md-6 ">
                 <label class="formulario__label" >Nombre</label>
-                <input type="text" class="form-control formulario__input" id="input-nombre" placeholder="Nombre">
+                <input type="text" class="form-control formulario__input" name="Nombre" id="input-nombre" placeholder="Nombre">
                 <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
                 <p class="formulario__input-error">Ingrese solo su Nombre</p>
               </div>
               <div class="form-group col-md-6">
                 <!-- INGRESAR APELLIDO -->
                 <label class="formulario__label">Apellido</label>
-                <input type="text" class="form-control formulario__input" id="input-apellido" placeholder="Apellido">
+                <input type="text" class="form-control formulario__input" name="Apellido" id="input-apellido" placeholder="Apellido">
                 <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
                 <p class="formulario__input-error">Ingrese solo su Apellido</p>
               </div>
@@ -165,7 +165,7 @@
               <div class="form-group col-md-6">
                 <!-- INGRESAR EMAIL -->
                 <label class="formulario__label">Email</label>
-                <input type="email" class="form-control formulario__input" id="input-email" placeholder="example@mail.cl">
+                <input type="email" class="form-control formulario__input" name="Email" id="input-email" placeholder="example@mail.cl">
                 <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
                 <p class="formulario__input-error">Ingrese un correo valido</p>
 
@@ -173,7 +173,7 @@
               <!-- INGRESAR TELEFONO -->
               <div class="form-group col-md-6">
                 <label class="formulario__label ">Telefono</label>
-                <input type="tel" class="form-control formulario__input" id="input-telefono" placeholder="+56 9 1234 1234">
+                <input type="tel" class="form-control formulario__input" name="Telefono" id="input-telefono" placeholder="+56 9 1234 1234">
                 <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
                 <p class="formulario__input-error">Ingrese un numero telefonico valido</p>
               </div>
@@ -185,7 +185,7 @@
                   <div class="col-auto my-1">
                     <label class="my-1 mr-2 formulario__label">¿Cuándo piensas comprar tu próximo vehículo?
                     </label>
-                    <select class="custom-select my-1 mr-sm-2" id="input-desicion-compra">
+                    <select class="custom-select my-1 mr-sm-2" name="PosibleCompra" id="input-desicion-compra">
                       <option selected>Seleccione por favor</option>
                       <option value="1">Antes de 3 meses</option>
                       <option value="2">De 3 a 6 meses</option>
@@ -205,12 +205,12 @@
                     <label for="inputState"class="formulario__label">¿Deseas agendar un test drive?</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input formulario__input" type="radio" name="inlineRadioOptions" id="input-test-drive1"
+                    <input class="form-check-input formulario__input" type="radio" name="sitestcar" id="input-test-drive1"
                       value="option1">
                     <label class="form-check-label" for="inlineRadio1">Si</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input formulario__input" type="radio" name="inlineRadioOptions" id="input-test-drive2"
+                    <input class="form-check-input formulario__input" type="radio" name="notestcar" id="input-test-drive2"
                       value="option2">
                     <label class="form-check-label" for="inlineRadio2">No</label>
                   </div>
@@ -223,12 +223,12 @@
                     <label for="inputState" class="formulario__label">¿Cómo deseas que te contactemos?</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input formulario__input" type="radio" name="inlineRadioOptions" id="input-modo-contacto1"
+                    <input class="form-check-input formulario__input" type="radio" name="Contacto-telefono" id="input-modo-contacto1"
                       value="option1">
                     <label class="form-check-label" for="inlineRadio1">Telefono</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input formulario__input" type="radio" name="inlineRadioOptions" id="input-modo-contacto2"
+                    <input class="form-check-input formulario__input" type="radio" name="Contacto-email" id="input-modo-contacto2"
                       value="option2">
                     <label class="form-check-label" for="inlineRadio2">Email</label>
                   </div>
@@ -273,7 +273,7 @@
 
   <!-- inicio llamado JS -->
   <script src="../JS/data.js"> </script>
-  <script src="../JS/eventos.js"></script>
+  <!-- <script src="../JS/eventos.js"></script> -->
   <script src="../JS/formulario.js"></script>
 
 
