@@ -32,23 +32,25 @@ const validarFormulario = (e) => {
 		case "telefono":
 			validarCampo(expresiones.telefono, e.target, 'telefono');
 		break;
+        
 	}
+    
 }
 
 const validarCampo = (expresion, input, campo) => {
 	if(expresion.test(input.value)){
-		document.getElementById(`input-${campo}`).classList.remove('formulario__grupo-incorrecto');
-		document.getElementById(`input-${campo}`).classList.add('formulario__grupo-correcto');
-		document.querySelector(`#input-${campo} i`).classList.add('fa-check-circle');
-		document.querySelector(`#input-${campo} i`).classList.remove('fa-times-circle');
-		document.querySelector(`#input-${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-circle-check'); 
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-circle-xmark');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
 		campos[campo] = true;
 	} else {
-		document.getElementById(`input-${campo}`).classList.add('formulario__grupo-incorrecto');
-		document.getElementById(`input-${campo}`).classList.remove('formulario__grupo-correcto');
-		document.querySelector(`#input-${campo} i`).classList.add('fa-times-circle');
-		document.querySelector(`#input-${campo} i`).classList.remove('fa-check-circle');
-		document.querySelector(`#input-${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-circle-xmark');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-circle-check');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
 		campos[campo] = false;
 	}
 }
@@ -61,14 +63,15 @@ inputs.forEach((input) => {
 formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 
-	const terminos = document.getElementById('terminos');
-	if(campos.nombre && campos.apellido && campos.email && campos.telefono && terminos.checked ){
+    /* MENSAJE DE VALIDACION FORMULARIO*/
+    // const terminos = document.getElementById('terminos');
+	if(campos.nombre && campos.apellido && campos.email && campos.telefono ){
 		formulario.reset();
 
-		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+		document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo');
 		setTimeout(() => {
-			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-		}, 5000);
+			document.getElementById('formulario__mensaje_exitoso').classList.remove('formulario__mensaje-exito-activo');
+		}, 3000);
 
 		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
 			icono.classList.remove('formulario__grupo-correcto');
