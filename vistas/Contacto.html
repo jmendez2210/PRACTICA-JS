@@ -149,7 +149,7 @@
               <!-- INGRESAR NOMBRE -->
               <div class="form-group col-md-6" id="grupo__nombre">
                 <label class="formulario__label" >Nombre</label>
-                <input type="text" class="form-control formulario__input" name="nombre" id="-nombre" placeholder="Nombre">
+                <input type="text" class="form-control formulario__input" name="nombre" id="nombre" placeholder="Nombre">
                 <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
                 <p class="formulario__input-error">Ingrese solo su Nombre</p>
               </div>
@@ -185,11 +185,11 @@
                   <div class="col-auto my-1">
                     <label class="my-1 mr-2 formulario__label">¿Cuándo piensas comprar tu próximo vehículo?
                     </label>
-                    <select class="custom-select my-1 mr-sm-2" name="posiblecompra" id=desicion-compra">
+                    <select class="custom-select my-1 mr-sm-2" name="posiblecompra" id="desicion-compra">
                       <option selected>Seleccione por favor</option>
-                      <option value="1">Antes de 3 meses</option>
-                      <option value="2">De 3 a 6 meses</option>
-                      <option value="3"> Sin intención de compra</option>
+                      <option value="Antes-de-3 meses">Antes de 3 meses</option>
+                      <option value="De-3-a-6-meses">De 3 a 6 meses</option>
+                      <option value="Sin-intención-de-compra"> Sin intención de compra</option>
                     </select>
                     <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
                     <p class="formulario__input-error">Por favor seleccione una opcion</p>
@@ -206,12 +206,12 @@
                   </div>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input formulario__input" type="radio" name="sitestcar" id="test-drive1"
-                      value="option1">
+                      value="Si-test-drive">
                     <label class="form-check-label" for="inlineRadio1">Si</label>
                   </div>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input formulario__input" type="radio" name="notestcar" id="test-drive2"
-                      value="option2">
+                      value="No-test-drive">
                     <label class="form-check-label" for="inlineRadio2">No</label>
                   </div>
                   <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
@@ -224,12 +224,12 @@
                   </div>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input formulario__input" type="radio" name="contacto-telefono" id="modo-contacto1"
-                      value="option1">
+                      value="contacto-telefono">
                     <label class="form-check-label" for="inlineRadio1">Telefono</label>
                   </div>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input formulario__input" type="radio" name="contacto-email" id="modo-contacto2"
-                      value="option2">
+                      value="contacto-email">
                     <label class="form-check-label" for="inlineRadio2">Email</label>
                   </div>
                   <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
@@ -273,8 +273,9 @@
 
   <!-- inicio llamado JS -->
   <script src="../JS/data.js"> </script>
-  <!-- <script src="../JS/eventos.js"></script> -->
+  <script src="../JS/eventos.js"></script>
   <script src="../JS/formulario.js"></script>
+  <!-- <script src="../JS/localstorage.js"></script> -->
 
 
   
