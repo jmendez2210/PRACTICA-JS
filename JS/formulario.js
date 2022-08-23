@@ -35,6 +35,7 @@ const campos = {
 
 /*inicio validacion de campos en el formulario*/
 const validarFormulario = (e) => {
+
 	switch (e.target.name) {
         case "nombre":
             validarCampo(expresiones.nombre, e.target, 'nombre');
@@ -86,11 +87,10 @@ const validarCampo = (expresion, input, campo) => {
 
 
 inputs.forEach((input) => {
-	input.addEventListener('keyup', validarFormulario);
+	input.addEventListener('keydown', validarFormulario);
 	input.addEventListener('blur', validarFormulario);
 });
 /*termino validacion de campos en el formulario*/
-
 
 /*-----------------------------------------------------------------*/
 // EVENTOS DE FORMULARIO submit
@@ -122,9 +122,13 @@ inputs.forEach((input) => {
             modocontacto2: modocontacto2
         }
         formulariocontacto.push(prospecto)
-
-        localStorage.setItem('guardarform',formulariocontacto)
+        /*Para almacenar la informacion en el local storage*/
+        //localStorage.setItem('guardarform',formulariocontacto)
         localStorage.setItem('guardarform', JSON.stringify(formulariocontacto) )
+        // localStorage.setItem('prospecto',nombre)
+        // localStorage.setItem('prospecto',apellido)
+        // localStorage.setItem('prospecto',email)
+
     
         /* MENSAJE DE VALIDACION FORMULARIO*/
         // const terminos = document.getElementById('terminos');
@@ -132,12 +136,21 @@ inputs.forEach((input) => {
             formulario.reset();
     
             document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo');
+
+            //RECUPERAR DATOS DEL LS...
+            document.querySelector('#texto-confirmacion').innerText = `¡Se ha enviado exitosamente su cotizacion! a ${nombre} ${apellido}, email: ${email}`
+
+            const datoscontacto = JSON.parse( localStorage.getItem('guardarform') )
+            console.log(datoscontacto)
+
             setTimeout(() => {
                 document.getElementById('formulario__mensaje_exitoso').classList.remove('formulario__mensaje-exito-activo');
-            }, 3000);
+            }, 10000);
     
             document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
                 icono.classList.remove('formulario__grupo-correcto');
+
+
             });
         } else {
             document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
@@ -145,10 +158,7 @@ inputs.forEach((input) => {
                 document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
             }, 3000);
         }
-    
-           
-           
-    
+
     
     });
 
