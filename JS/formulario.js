@@ -131,15 +131,29 @@ inputs.forEach((input) => {
 
     
         /* MENSAJE DE VALIDACION FORMULARIO*/
-        // const terminos = document.getElementById('terminos');
-        if(campos.nombre && campos.apellido && campos.email && campos.telefono ){
+        // **** INICIO OPERADOR TERNARIO ***///
+        let validarnombre = []
+        validarnombre = campos.nombre ? (document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo')) : (document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'))
+
+        let validarapellido = []
+        validarapellido = campos.apellido ? (document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo')) : (document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'))
+
+        let validaremail = []
+        validaremail = campos.email ? (document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo')) : (document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'))
+
+        let validartelefono = []
+        validartelefono = campos.telefono ? (document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo')) : (document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'))
+
+
+        if(campo.nombre && campos.apellido && campos.email && campos.telefono ){
             formulario.reset();
     
-            document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo');
+           // document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo');
 
-            //RECUPERAR DATOS DEL LS...
+            
             document.querySelector('#texto-confirmacion').innerText = `¡Se ha enviado exitosamente su cotizacion! a ${nombre} ${apellido}, email: ${email}`
 
+            //RECUPERAR DATOS DEL LS...
             const datoscontacto = JSON.parse( localStorage.getItem('guardarform') )
             console.log(datoscontacto)
 
@@ -153,7 +167,7 @@ inputs.forEach((input) => {
 
             });
         } else {
-            document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+            //document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
             setTimeout(() => {
                 document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
             }, 3000);
