@@ -28,6 +28,10 @@ const campos = {
     modocontacto2: false
 }
 
+// DESESTRUCTURACION DEL OBJETO
+const {nombre, apellido, email, telefono} = campos
+
+console.log (nombre, apellido, email, telefono)
 
 
 
@@ -87,7 +91,7 @@ const validarCampo = (expresion, input, campo) => {
 
 
 inputs.forEach((input) => {
-	input.addEventListener('keydown', validarFormulario);
+	input.addEventListener('keyup', validarFormulario);
 	input.addEventListener('blur', validarFormulario);
 });
 /*termino validacion de campos en el formulario*/
@@ -122,17 +126,20 @@ inputs.forEach((input) => {
             modocontacto2: modocontacto2
         }
         formulariocontacto.push(prospecto)
+
+        /*DESCTRUCTURADOR DEL OBJETO PROSPECTO*/
+        const {Nombre, Apellido, Email} = prospecto
+        console.log (Nombre, Apellido, Email)
+
+
         /*Para almacenar la informacion en el local storage*/
-        //localStorage.setItem('guardarform',formulariocontacto)
         localStorage.setItem('guardarform', JSON.stringify(formulariocontacto) )
-        // localStorage.setItem('prospecto',nombre)
-        // localStorage.setItem('prospecto',apellido)
-        // localStorage.setItem('prospecto',email)
+
 
     
         /* MENSAJE DE VALIDACION FORMULARIO*/
         // **** INICIO OPERADOR TERNARIO ***///
-        let validarnombre = []
+        let validarnombre = "";
         validarnombre = campos.nombre ? (document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo')) : (document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'))
 
         let validarapellido = []
@@ -145,21 +152,22 @@ inputs.forEach((input) => {
         validartelefono = campos.telefono ? (document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo')) : (document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'))
 
 
-        if(campo.nombre && campos.apellido && campos.email && campos.telefono ){
+        if( campos.nombre && campos.apellido && campos.email && validartelefono ){
+        //if(validarnombre && validarapellido && validaremail && validartelefono ){
             formulario.reset();
     
-           // document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo');
+            document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo');
 
             
-            document.querySelector('#texto-confirmacion').innerText = `¡Se ha enviado exitosamente su cotizacion! a ${nombre} ${apellido}, email: ${email}`
+            document.querySelector('#texto-confirmacion').innerText = `¡Se ha enviado exitosamente su cotizacion!`
 
             //RECUPERAR DATOS DEL LS...
-            const datoscontacto = JSON.parse( localStorage.getItem('guardarform') )
-            console.log(datoscontacto)
+            // const datoscontacto = JSON.parse( localStorage.getItem('guardarform') )
+            
 
             setTimeout(() => {
                 document.getElementById('formulario__mensaje_exitoso').classList.remove('formulario__mensaje-exito-activo');
-            }, 10000);
+            }, 3000);
     
             document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
                 icono.classList.remove('formulario__grupo-correcto');

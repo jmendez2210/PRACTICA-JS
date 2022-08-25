@@ -46,7 +46,7 @@
 
 
 /*-----------------------------------------------------------------*/
-// EVENTOS DE FORMULARIO submit
+// EVENTOS DE FORMULARIO submit no los utilizo
 /*-----------------------------------------------------------------*/
 const inputnombre = document.querySelector('#nombre')
 const inputapellido = document.querySelector('#apellido')

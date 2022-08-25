@@ -165,6 +165,10 @@ class versionvh {
     }
  }
 
+ //destructuracion del oobjeto
+const { marca, modelo, version } = versionvh
+console.log(marca, modelo, version)
+
  const version1 = new versionvh("Mazda", "CX9", "CX-9 R 2.5 T 2WD 6AT", 35090000, "Blanco")
  vehiculos.push (version1)
  const version2 = new versionvh("Mazda", "CX9", "CX-9 R 2.5 T 2WD 6MT", 30090000, "rojo")
