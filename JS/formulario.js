@@ -139,35 +139,42 @@ inputs.forEach((input) => {
     
         /* MENSAJE DE VALIDACION FORMULARIO*/
         // **** INICIO OPERADOR TERNARIO ***///
-        let validarnombre = "";
-        validarnombre = campos.nombre ? (document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo')) : (document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'))
-
-        let validarapellido = []
-        validarapellido = campos.apellido ? (document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo')) : (document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'))
-
-        let validaremail = []
-        validaremail = campos.email ? (document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo')) : (document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'))
-
-        let validartelefono = []
-        validartelefono = campos.telefono ? (document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo')) : (document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'))
+         let validarnombre = []
+         validarnombre = campos.nombre ? (document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo')) : (document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'))
+        
 
 
-        if( campos.nombre && campos.apellido && campos.email && validartelefono ){
+         let validarapellido = []
+         validarapellido = campos.apellido ? (document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo')) : (document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'))
+
+         let validaremail = []
+         validaremail = campos.email ? (document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo')) : (document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'))
+
+         let validartelefono = []
+         validartelefono = campos.telefono ? (document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo')) : (document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'))
+
+
+        if( campos.nombre && campos.apellido && campos.email && campos.telefono ){
         //if(validarnombre && validarapellido && validaremail && validartelefono ){
             formulario.reset();
     
-            document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo');
+            //  document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo');
+
+            //  document.querySelector('#texto-confirmacion').innerText = `¡Se ha enviado exitosamente su cotizacion!`
 
             
-            document.querySelector('#texto-confirmacion').innerText = `¡Se ha enviado exitosamente su cotizacion!`
 
-            //RECUPERAR DATOS DEL LS...
-            // const datoscontacto = JSON.parse( localStorage.getItem('guardarform') )
-            
+            // setTimeout(() => {
+            //     document.getElementById('formulario__mensaje_exitoso').classList.remove('formulario__mensaje-exito-activo');
+            // }, 3000);
 
-            setTimeout(() => {
-                document.getElementById('formulario__mensaje_exitoso').classList.remove('formulario__mensaje-exito-activo');
-            }, 3000);
+            Swal.fire({
+                icon: 'success',
+                title: 'Cotizacion',
+                text: '¡Se ha enviado exitosamente su cotizacion!',
+                duration: 3000,
+           
+        })
     
             document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
                 icono.classList.remove('formulario__grupo-correcto');
@@ -175,12 +182,23 @@ inputs.forEach((input) => {
 
             });
         } else {
-            //document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
-            setTimeout(() => {
-                document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
-            }, 3000);
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Cotizacion',
+                text: '¡Error: Por favor ingresar los datos del formulario correctamente. ',
+                duration: 3000,
+           
+        })
+            // document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+            // setTimeout(() => {
+            //     document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
+            // }, 3000);
         }
 
     
     });
 
+
+
+    
