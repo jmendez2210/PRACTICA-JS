@@ -35,28 +35,7 @@ fetch ("http://swapi.dev/api/vehicles/4/")
          })
  }
 
-// let id = 1
 
-// btnSiguiente.addEventListener('click', () => {
-//     id++
-//     pedirvhstwars(id)
-// })
-
-// btnAnterior.addEventListener('click', () => {
-//     if (id === 1) { return }
-//     id--
-//     pedirvhstwars(id)
-// })
-
-// const form = document.querySelector('#form-busqueda')
-// const inputBusqueda = document.querySelector('#busqueda')
-
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault()
-//     const busqueda = inputBusqueda.value
-
-//     pedirvhstwars(busqueda)
-// })
 
 pedirvhstwars()
 
@@ -64,17 +43,3 @@ pedirvhstwars()
 
 
 
-
-/*
-let request = "https://swapi.dev/api/vehicles"
-console.log (request)
-
- fetch ("http://swapi.dev/api/vehicles/4/") 
-         .then ((res)=> {
-             return res.json ()
-             //console.log(res)
-         }) 
-         .then((data)=> {
-             console.log(data)
-         })
-*/
