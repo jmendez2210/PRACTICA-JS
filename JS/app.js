@@ -24,6 +24,7 @@ fetch ("http://swapi.dev/api/vehicles/4/")
              vehiculosstartwarContainer.innerHTML = `
                              <h3>${vehiculosstartwar.name}</h3>
                              <p>${vehiculosstartwar.model}</p>
+                             <p>${vehiculosstartwar.vehicle_class}</p>
                      `
          })
          .catch((err) => {
