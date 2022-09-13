@@ -4,6 +4,7 @@
 const containervehiculospeugeot = document.querySelector('#contenedor-vehiculos-peugeot')
 const Containermodal = document.querySelector('#modalContactForm')
 const actualizarmodelo = document.querySelector('#agregarmodelomodal')
+let guardarformvh = localStorage.getItem('guardarformvh')
 
 // const peugeot3008 = modelo3008[0]
 
@@ -153,7 +154,10 @@ const agregarmodelo3008 = (id) => {
     agregarmodelo.append(div)
 
     console.log   (peugeot3008 )
-    localStorage.setItem('agregarmodelo3008', JSON.stringify(peugeot3008) )
+
+    /*Para almacenar la informacion en el local storage*/
+    localStorage.setItem('guardarform', JSON.stringify(formulariocontacto) )
+    localStorage.setItem('guardarformvh', JSON.stringify(peugeot3008) )
 
 
 

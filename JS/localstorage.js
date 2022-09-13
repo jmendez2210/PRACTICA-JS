@@ -4,8 +4,10 @@ let usuario = localStorage.getItem('usuario')
 
 
 const datoscontacto = JSON.parse( localStorage.getItem('guardarform') )
+const datosauto = JSON.parse( localStorage.getItem('guardarformvh') )
 /* SPREAD DEL ARRAY DATOS DE CONTACTO */
 console.log(...datoscontacto)
+//console.log(...datosauto)
 
 
 
@@ -25,7 +27,13 @@ datoscontacto.forEach( (datoscontacto) => {
                     <h4>Nombre: ${datoscontacto.nombre} ${datoscontacto.apellido}</h4>
                     <p>Email: ${datoscontacto.email}</p>
                     <p>Telefono: ${datoscontacto.telefono}</p>
-                    <p>Modelo: </p>
-                `
+                    <p>Modelo: ${datosauto.version}</p>
+             `
+            
+            // if ( ) {
+            //     const datosauto = agregarmodelo3008.find((datosauto) => datosauto.id === id)
+
+            // }
+
     listaUsuarios.append(li)
 } )
