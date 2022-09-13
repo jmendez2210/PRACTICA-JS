@@ -21,17 +21,17 @@ const campos = {
 	apellido: false,
 	email: false,
 	telefono: false,
-    desicioncompra: false,
-    testdrive1: false,
-    testdrive2: false,
-    modocontacto1: false,
-    modocontacto2: false
+    // desicioncompra: false,
+    // testdrive1: false,
+    // testdrive2: false,
+    // modocontacto1: false,
+    // modocontacto2: false
 }
 
 // DESESTRUCTURACION DEL OBJETO
-const {nombre, apellido, email, telefono} = campos
+// const {nombre, apellido, email, telefono} = campos
 
-console.log (nombre, apellido, email, telefono)
+// console.log (nombre, apellido, email, telefono)
 
 
 
@@ -107,11 +107,11 @@ inputs.forEach((input) => {
         const apellido = inputapellido.value
         const email = inputemail.value
         const telefono = inputtelefono.value
-        const desicioncompra = inputdesicioncompra.value
-        const testdrive1 = inputtestdrive1.value
-        const testdrive2 = inputtestdrive2.value
-        const modocontacto1 = inputmodocontacto1.value
-        const modocontacto2 = inputmodocontacto2.value
+        // const desicioncompra = inputdesicioncompra.value
+        // const testdrive1 = inputtestdrive1.value
+        // const testdrive2 = inputtestdrive2.value
+        // const modocontacto1 = inputmodocontacto1.value
+        // const modocontacto2 = inputmodocontacto2.value
     
     
         const prospecto = {
@@ -119,17 +119,17 @@ inputs.forEach((input) => {
             apellido: apellido, 
             email: email,
             telefono: telefono,
-            desicioncompra: desicioncompra,
-            testdrive1: testdrive1,
-            testdrive2: testdrive2,
-            modocontacto1: modocontacto1,
-            modocontacto2: modocontacto2
+            // desicioncompra: desicioncompra,
+            // testdrive1: testdrive1,
+            // testdrive2: testdrive2,
+            // modocontacto1: modocontacto1,
+            // modocontacto2: modocontacto2
         }
         formulariocontacto.push(prospecto)
 
         /*DESCTRUCTURADOR DEL OBJETO PROSPECTO*/
-        const {Nombre, Apellido, Email} = prospecto
-        console.log (Nombre, Apellido, Email)
+        // const {Nombre, Apellido, Email} = prospecto
+        // console.log (Nombre, Apellido, Email)
 
 
         /*Para almacenar la informacion en el local storage*/
@@ -138,29 +138,13 @@ inputs.forEach((input) => {
 
     
         /* MENSAJE DE VALIDACION FORMULARIO*/
-        // **** INICIO OPERADOR TERNARIO ***///
-        //   let validarnombre = []
-        //   validarnombre = campos.nombre ? (document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo')) : (document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'))
-        
-
-
-        //   let validarapellido = []
-        //   validarapellido = campos.apellido ? (document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo')) : (document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'))
-
-        //   let validaremail = []
-        //   validaremail = campos.email ? (document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo')) : (document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'))
-
-        //   let validartelefono = []
-        //   validartelefono = campos.telefono ? (document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo')) : (document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'))
-
-
         if( campos.nombre && campos.apellido && campos.email && campos.telefono ){
-        //if(validarnombre && validarapellido && validaremail && validartelefono ){
+
             formulario.reset();
     
                document.getElementById('formulario__mensaje_exitoso').classList.add('formulario__mensaje-exito-activo');
 
-              // document.querySelector('#texto-confirmacion').innerText = `¡Se ha enviado exitosamente su cotizacion!`
+
 
                setTimeout(() => {
                 document.getElementById('formulario__mensaje_exitoso').classList.remove('formulario__mensaje-exito-activo')        

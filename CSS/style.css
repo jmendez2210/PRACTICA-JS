@@ -108,3 +108,28 @@
 .dark * {
     color: #fff;
 }
+
+
+
+/* card pagina peugeot */
+.containervehiculospeugeot {
+    max-width: 1200px;
+    margin: 60px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+p {
+    line-height: 1.8;
+}
+h5{
+	align-items: center;
+}
+.vehiculospeugeot {
+    max-width: 250px;
+    padding: 10px;
+	align-items: center;
+	display: inline-flex;
+}

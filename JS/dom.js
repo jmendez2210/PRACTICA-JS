@@ -1,154 +1,172 @@
 // ========== DOM =======
 
-/*console.dir (document)*/
 
+const containervehiculospeugeot = document.querySelector('#contenedor-vehiculos-peugeot')
+const Containermodal = document.querySelector('#modalContactForm')
+const actualizarmodelo = document.querySelector('#agregarmodelomodal')
 
+// const peugeot3008 = modelo3008[0]
 
+/*RENDERIZAR COTIZADOR DE VEHICULOS*/
+modelo3008.forEach((peugeot3008) => {
 
-// llamar elemento de html
-/*const titulos = document.getElementById('titulos')
-console.log (titulos)
-const marca = document.getElementById('marca')
-console.log (marca)
-const listItems = document.getElementsByClassName('item')
-
-const parrafo = document.getElementById ('parrafo')
-console.log (parrafo.innerHTML)*/
-
-// modificar elemento de html
-// parrafo.innerHTML = "************** texto pruebalaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaan**************"
-
-// crear elementos al parrafo
-/*const parrafomarca = document.createElement ('parrafomarca')
-parrafomarca.innerHTML = " lorem ipsum blblblblbbllbblblblblblbl"
-
-parrafo.append(parrafomarca)*/
-
-// const lista = document.getElementById ('lista')
-
-// const li = document.createElement('li')
-// li.innerHTML = "**************NUEVO TEXTO AGREGADO **************"
-
-
-// lista.append(li)
-
-//arreglo agregar versiones 
-/*const modelospeugoet = ["208", "308", "3008", "5008", "Traveller", "Landtrek", "Partner"] 
-const listamodelospg = document.getElementById('modelospeugoet')
-
-
-for (const modelos of modelospeugoet) {
-    const li = document.createElement('li')
-    li.innerHTML = modelos
-    
-    listamodelospg.append(li)
-    
-}*/
-
-// const modelosmazda = ["Mazda 3", "Mazda 2", "CX-5", "CX-9", "CX-30", "MX-5","BT-50"] 
-// const listamodelosmz = document.getElementById('modelosmazda')
-
-
-// for (const modelos of modelosmazda) {
-//     const li = document.createElement('li')
-//     li.innerHTML = modelos
-    
-//     listamodelospg.append(li)
-    
-// }
-
-// console.log (modelospeugoet)
-// console.log (li)
-
-//eliminar elementos
-
-// parrafo.remove ()
-
-
-
-/* ---------------------------------------------------------------------- */
-//dom con objetos
-/* ----------------------------------------------------------------------*/
-
-/*const vehiculosdom = [
-         {
-            id: 1,
-            marca: "mazda",
-            modelo:"cx5",
-            version: "CX-5 SIGNATURE 2.5T AWD 6AT",
-            precio: 32890000, 
-            color: "rojo"
-         },
-         {
-             id: 2,
-             marca: "Peugeot",
-             modelo:"3008",
-             version: "3008 allure GTI",
-             precio: 22000000, 
-             color: "gris metalico"
-         },
-         {
-             id: 3,
-             marca: "mazda",
-             modelo:"cx9",
-             version: "CX-9 CORE 2.0 2WD 6MT",
-             precio: 23990000, 
-             color: "blanco"
-         }
- ]
-
- const containervehiculosdom = document.getElementById('vehiculosdom')
- vehiculosdom.forEach((vehiculosdom) => {
     const div = document.createElement('div')
-    div.innerHTML = `<h4>${vehiculosdom.marca}</h4>
-                    <h4>${vehiculosdom.modelo}</h4>
-                    <h4>${vehiculosdom.version}</h4>
-                    <p>Precio: ${vehiculosdom.precio}</p>
-                    <small>Color: ${vehiculosdom.color}</small>`
+    div.className = "vehiculospeugeot"
+    div.innerHTML = `
+    <div class="card" style="width: 20rem;">
+    <img src=${peugeot3008.img} alt="...">
+    <div class="card-body">
+        <h5 class="card-title text-center">${peugeot3008.modelo}</h5>
+        <p class="card-text text-center">${peugeot3008.version}</p>
+        <p class="card-text text-center"><b>Precio:</b> $${peugeot3008.precio}</p>
+    </div>
+    <!-- INICIO FOOTER MODAL formulario contacto -->
+    <div class="card-footer ">
+        <!-- INICIO MODAL AUTO -->
+        <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <!-- INICIO MODAL CONTENIDO -->
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Usted esta Cotizando</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <!-- MODAL DESCRIPCION AUTO -->
+                    <div class="modal-body mx-3">
+                        <div id="agregarmodelomodal" class="md-form text-center" style="width: auto;">
+                        </div>
+                        <form class="" id="formulario">
+                            <!-- INGRESAR NOMBRE -->
+                            <div class="form-group md-form mb-5" id="grupo__nombre">
+                                <i class="fas fa-user prefix grey-text"></i>
+                                <label class="formulario__label" data-error="wrong" data-success="right"
+                                    for="form34">Nombre</label>
+                                <input type="text" class="form-control formulario__input" name="nombre"
+                                    id="nombre" placeholder="Nombre">
+                                <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                                <p class="formulario__input-error">Ingrese solo su Nombre</p>
+                            </div>
+                            <!-- INGRESAR APELLIDO -->
+                            <div class="form-group  md-form mb-5" id="grupo__apellido">
+                                <i class="fas fa-user prefix grey-text"></i>
+                                <label class="formulario__label" data-error="wrong" data-success="right"
+                                    for="form35">Apellido</label>
+                                <input type="text" class="form-control formulario__input" name="apellido"
+                                    id="apellido" placeholder="Apellido">
+                                <i class="formulario__validacion-estado  fa-solid fa-circle-xmark"></i>
+                                <p class="formulario__input-error">Ingrese solo su Apellido</p>
+                            </div>
+                            <!-- INGRESAR EMAIL -->
+                            <div class="form-group md-form mb-5" id="grupo__email">
+                                <i class="fas fa-envelope prefix grey-text"></i>
+                                <label class="formulario__label">Email</label>
+                                <input type="email" class="form-control formulario__input" name="email"
+                                    id="email" placeholder="example@mail.cl">
+                                <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                                <p class="formulario__input-error">Ingrese un correo valido</p>
+                            </div>
+                            <!-- INGRESAR TELEFONO -->
+                            <div class="form-group  lg-form mb-5" id="grupo__telefono">
+                                <i class="fas fa-phone prefix grey-text"></i>
+                                <label class="formulario__label">Telefono</label>
+                                <input type="tel" class="form-control formulario__input" name="telefono"
+                                    id="telefono" placeholder="+56 9 1234 1234">
+                                <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                                <p class="formulario__input-error">Ingrese un numero telefonico valido</p>
+                            </div>
+                            <div class="modal-footer d-flex justify-content-center">
+                                <div id="formulario__mensaje" class="alert alert-danger formulario__mensaje col"
+                                    role="alert">
+                                    <p><i class="fa-solid fa-triangle-exclamation"></i><b> Error:</b> Por favor ingresar
+                                        los datos del formulario correctamente.</p>
+                                </div>
+                                <div id="formulario__mensaje" class="alert alert-danger formulario__mensaje col"
+                                    role="alert">
+                                    <p><i class="fa-solid fa-triangle-exclamation"></i><b> Error:</b> Por favor ingresar
+                                        los datos del formulario correctamente.</p>
+                                </div>
+                                <div class="form-group formulario__grupo-btn-enviar col">
+                                    <button id="btncotizar" type="submit" class="btn btn-outline-dark ">Enviar
+                                        Cotizar</button>
 
-                    containervehiculosdom.append(div)
-})*/
+                                    <div class="alert alert-success formulario__mensaje_exitoso"
+                                        id="formulario__mensaje_exitoso" role="alert">
+                                        <p id="texto-confirmacion">¡Se ha enviado exitosamente su cotizacion!</p>
+                                    </div>
+                                </div>
+                            </div>
+                         </form>
+                    </div>
 
-/* ----------------------------------------------------------------------*/
-//DOM PARA PAGINA PEUGEOT.
-/* ----------------------------------------------------------------------*/
+                </div>
+                <!-- TERMINO MODAL CONTENIDO -->
+            </div>
+        </div>
+        <!-- TERMINO MODAL AUTO -->
+        <div class="text-center">
+            <button id="cot-${peugeot3008.id}" type="submit" class="btn btn-outline-dark" data-toggle="modal"
+                data-target="#modalContactForm">Cotizar
+                <i class="fas fa-paper-plane-o ml-1"></i></button>
+        </div>
+    </div>
+    <!-- Termino FOOTER MODAL formulario contacto -->
+</div>
+ `
+    containervehiculospeugeot.append(div)
 
-const section = document.querySelector("#seccion-modelos-peugoet")
-const temp = document.querySelector ("template") 
-const card = temp.content.querySelector("div")
+    /* recuperar boton para cotizar modelo*/
+    const btnagregarmodelo = document.querySelector(`#cot-${peugeot3008.id}`)
 
-clonado(vehiculos)
+    btnagregarmodelo.addEventListener('click', () => {
+        agregarmodelo3008(peugeot3008.id)
+
+        //console.log   (btnagregarmodelo)
+    })
+
+})
+/*Agregar modelo al modal */
+const actualizarmodal = []
+
+const agregarmodelo3008 = (id) => {
+
+    const peugeot3008 = modelo3008.find((pgt3008) => pgt3008.id === id)
+    // console.log (peugeot3008)
+
+    const agregarmodelo = document.querySelector('#agregarmodelomodal')
+
+    const div = document.createElement('div')
+    div.className = "agregarmodelomodal"
+    div.innerHTML = `        
+                                 <div class="md-form text-center" style="width: auto;">
+                                   <img src=${peugeot3008.img} class="card-img-top" alt="...">
+                                   <div class="">
+                                     <h5 class="">${peugeot3008.modelo}</h5>
+                                     <p class="">${peugeot3008.version}</p>  
+                                     <p class="">$${peugeot3008.precio}</p>            
+                                   </div>
+                                 </div>
+                                   `
+    actualizarvhmodal()
+    agregarmodelo.append(div)
+
+    //console.log   (peugeot3008)
 
 
-function clonado (array){
-    array.forEach((elm) => {
-        let cardClonada = card.cloneNode (card,true)
-        cardClonada.children[1].innerText = elm.modelo
-        cardClonada.children[2].innerText = elm.version
-        cardClonada.children[3].innerText = elm.precio
-        
-    
-        section.appendChild(cardClonada)
-        
-        
-     });
 
 }
 
-/* llamada de selectores para el formulario*/
-// const inputnombre = document.querySelector('#nombre')
-// const inputapellido = document.querySelector('#apellido')
-// const inputemail = document.querySelector('#email')
-// const inputtelefono = document.querySelector('#telefono')
-// const inputdesicioncompra = document.querySelector('#desicion-compra')
-// const inputtestdrive1 = document.querySelector('#test-drive1')
-// const inputtestdrive2 = document.querySelector('#test-drive2')
-// const inputmodocontacto1 = document.querySelector('#modo-contacto1')
-// const inputmodocontacto2 = document.querySelector('#modo-contacto2')
+const actualizarvhmodal = (id) => {
+    const peugeot3008 = modelo3008.reduce((pgt3008) => pgt3008.id === id)
+    //console.log   (peugeot3008 + " nuevo modelo")
+    if (peugeot3008 === true) {
+        const agregarmodelo = document.querySelector('#agregarmodelomodal')
 
-
-// const form = document.querySelector('#formulario')
-
-// const usersList = document.querySelector('#usuarios') 
-
-
+        const div = document.createElement('div')
+        div.className = "agregarmodelomodal"
+        agregarmodelo.innerHTML = ""
+        agregarmodelo.append(div)
+    }
+}

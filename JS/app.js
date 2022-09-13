@@ -1,6 +1,8 @@
+
+/* conexion API */
 const vehiculosstartwarContainer = document.querySelector('#vehiculosstartwar')
-const btnSiguiente = document.querySelector('#btnSiguiente')
-const btnAnterior = document.querySelector('#btnAnterior')
+// const btnSiguiente = document.querySelector('#btnSiguiente')
+// const btnAnterior = document.querySelector('#btnAnterior')
 
 let request = "http://swapi.dev/api/vehicles/4/"
 console.log (request)
