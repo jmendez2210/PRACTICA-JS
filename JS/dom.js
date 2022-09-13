@@ -152,7 +152,8 @@ const agregarmodelo3008 = (id) => {
     actualizarvhmodal()
     agregarmodelo.append(div)
 
-    //console.log   (peugeot3008)
+    console.log   (peugeot3008 )
+    localStorage.setItem('agregarmodelo3008', JSON.stringify(peugeot3008) )
 
 
 
@@ -169,4 +170,5 @@ const actualizarvhmodal = (id) => {
         agregarmodelo.innerHTML = ""
         agregarmodelo.append(div)
     }
+    
 }
